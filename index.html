@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor PWA</title>
+</head>
+<body>
+<h1>Vendor's web app</h1>
+
+<script>
+    function sendMessage() {
+        var targetWindow = document.getElementById('parent_window');
+<!--        var targetWindow = document.querySelector('iframe').contentDocument;-->
+        if (targetWindow !== null) {
+            console.log('postMessage is not null');
+            targetWindow.postMessage('Hello from the vendor PWA');
+        } else {
+            console.log('postMessage is null');
+        }
+    }
+
+
+</script>
+<button onclick="sendMessage()">Send Message</button>
+</body>
+</html>
