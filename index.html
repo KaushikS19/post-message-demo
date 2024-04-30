@@ -10,7 +10,7 @@
 
 <script>
     function sendMessage() {
-        var targetWindow = document.getElementById('parent_window');
+        var targetWindow = document.getElementById('parent_window').contentWindow;
 <!--        var targetWindow = document.querySelector('iframe').contentDocument;-->
         if (targetWindow !== null) {
             console.log('postMessage is not null');
