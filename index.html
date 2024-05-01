@@ -10,13 +10,15 @@
 
 <script>
     function sendMessage() {
-        var targetWindow = document.getElementById('parent_window');
-        if (targetWindow !== null) {
-            console.log('postMessage is not null');
-            targetWindow.postMessage('Hello from the vendor PWA', '*');
-        } else {
-            console.log('postMessage is null');
-        }
+        // var targetWindow = document.getElementById('parent_window');
+        // if (targetWindow !== null) {
+        //     console.log('postMessage is not null');
+        //     targetWindow.postMessage('Hello from the vendor PWA', '*');
+        // } else {
+        //     console.log('postMessage is null');
+        // }
+        window.parent.postMessage('Hello from the vendor PWA', '*');
+        console.log('message sent');
     }
 
 
