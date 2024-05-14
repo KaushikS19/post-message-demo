@@ -10,9 +10,9 @@
 
 <script>
 
-    let iFrameId = document.querySelector('#parent_window');
+    let iFrameId = document.querySelector('iframe[src*="https://kaushiks19.github.io/post-message-demo/"]');
     function sendMessage() {
-        if (iFrameId !== null) {
+        if (!!iFrameId) {
             iFrameId.postMessage('Hello from the vendor PWA', '*');
             console.log('message sent');
         } else {
