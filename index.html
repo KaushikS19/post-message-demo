@@ -18,7 +18,7 @@
         // } else {
         //     console.log('iFrameId is null');
         // }
-        window.parent.postMessage('Hello from the vendor PWA', '*');
+        window.top.postMessage('Hello from the vendor PWA', '*');
         console.log('message sent');
     }
 
