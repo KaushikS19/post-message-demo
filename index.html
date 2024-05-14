@@ -9,9 +9,15 @@
 <h1>Vendor's web app</h1>
 
 <script>
+
+    let iFrameId = document.querySelector('#parent_window');
     function sendMessage() {
-        window.top.postMessage('Hello from the vendor PWA', '*');
-        console.log('message sent');
+        if (iFrameId !== null) {
+            iFrameId.postMessage('Hello from the vendor PWA', '*');
+            console.log('message sent');
+        } else {
+            console.log('iFrameId is null');
+        }
     }
 
 
