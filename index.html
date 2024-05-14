@@ -10,20 +10,20 @@
 
 <script>
 
-    let iFrameId = document.querySelector('iframe[src*="https://kaushiks19.github.io/post-message-demo/"]');
+    // let iFrameId = document.querySelector('iframe[src*="https://kaushiks19.github.io/post-message-demo/"]');
     function sendMessage() {
-        if (!!iFrameId) {
-            iFrameId.postMessage('Hello from the vendor PWA', '*');
-            console.log('message sent');
-        } else {
-            console.log('iFrameId is null');
-        }
+        // if (!!iFrameId) {
+        //     iFrameId.postMessage('Hello from the vendor PWA', '*');
+        //     console.log('message sent');
+        // } else {
+        //     console.log('iFrameId is null');
+        // }
+        window.parent.postMessage('Hello from the vendor PWA', '*');
+        console.log('message sent');
     }
 
 
 </script>
 <button onclick="sendMessage()">Send Message</button>
-
-<button onclick="sendMessage()">Send Callback</button>
 </body>
 </html>
