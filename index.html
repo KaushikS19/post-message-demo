@@ -18,7 +18,14 @@
         // } else {
         //     console.log('iFrameId is null');
         // }
-        window.top.postMessage('ExternalURL: https://www.google.co.in/', '*');
+        function sendExternalUrlCallbackToCC(message, pageUrl) {
+            window.top.postMessage(JSON.stringify({
+                event: message,
+                pageUrl: pageUrl,
+            }), '*');
+        }
+        // window.top.postMessage('ExternalURL: https://www.google.co.in/', '*');
+        sendExternalUrlCallbackToCC('ExternalURL: ', 'https://www.google.com');
         console.log('message sent');
     }
 
