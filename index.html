@@ -18,19 +18,26 @@
         // } else {
         //     console.log('iFrameId is null');
         // }
+        
+        window.top.postMessage('closeVendorApp', '*');
+        console.log('message sent for closing');
+    }
+
+    function sendMessageForExternalUrlRedirection() {
         function sendExternalUrlCallbackToCC(message, pageUrl) {
             window.top.postMessage(JSON.stringify({
                 event: message,
                 pageUrl: pageUrl,
             }), '*');
         }
-        // window.top.postMessage('ExternalURL: https://www.google.co.in/', '*');
         sendExternalUrlCallbackToCC('ExternalURL', 'https://www.google.com');
-        console.log('message sent');
+        console.log('message sent for external URL redirection');
     }
 
 
 </script>
-<button onclick="sendMessage()">Send Message</button>
+<button onclick="sendMessage()">Close PWA</button>
+<br>
+<button onclick="sendMessageForExternalUrlRedirection()">Redirect</button>
 </body>
 </html>
